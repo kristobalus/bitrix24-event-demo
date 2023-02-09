@@ -13,6 +13,11 @@ app.post('/on-deal-changed', (req: Request, res: Response) => {
     res.status(200).send()
 })
 
+app.post('/on-lead-changed', (req: Request, res: Response) => {
+    log.debug(req.body)
+    res.status(200).send()
+})
+
 app.listen(port, () => {
     log.debug(`Demo app listening on port ${port}`)
 })
