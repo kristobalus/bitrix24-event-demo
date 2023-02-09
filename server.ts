@@ -10,12 +10,14 @@ app.use(bodyParser.json({ strict: true, type: 'application/json' }));
 const port = 80
 
 app.post('/on-deal-update', (req: Request, res: Response) => {
-    logger.info(req.body, JSON.stringify(req.body))
+    logger.info({  body: req.body, raw: JSON.stringify(req.body) }, `incoming message`)
     res.status(200).send()
 })
 
 app.post('/on-lead-update', (req: Request, res: Response) => {
-    logger.info(req.body, JSON.stringify(req.body))
+    logger.info({  body: req.body,
+        raw: JSON.stringify(req.body),
+        headers: req.headers }, `incoming message`)
     res.status(200).send()
 })
 
