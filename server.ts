@@ -5,7 +5,8 @@ const logger: Logger = Logger.createLogger({name: "demo"});
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
-app.use(bodyParser.json({ type: 'application/*+json' }))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ strict: true, type: 'application/json' }));
 const port = 80
 
 app.post('/on-deal-update', (req: Request, res: Response) => {
