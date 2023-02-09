@@ -8,12 +8,12 @@ const app = express()
 app.use(bodyParser.json({ type: 'application/*+json' }))
 const port = 80
 
-app.post('/on-deal-changed', (req: Request, res: Response) => {
+app.post('/on-deal-update', (req: Request, res: Response) => {
     logger.info(req.body)
     res.status(200).send()
 })
 
-app.post('/on-lead-changed', (req: Request, res: Response) => {
+app.post('/on-lead-update', (req: Request, res: Response) => {
     logger.info(req.body)
     res.status(200).send()
 })
