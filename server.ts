@@ -9,15 +9,15 @@ app.use(bodyParser.json({ type: 'application/*+json' }))
 const port = 80
 
 app.post('/on-deal-changed', (req: Request, res: Response) => {
-    log.debug(req.body)
+    log.info(req.body)
     res.status(200).send()
 })
 
 app.post('/on-lead-changed', (req: Request, res: Response) => {
-    log.debug(req.body)
+    log.info(req.body)
     res.status(200).send()
 })
 
 app.listen(port, () => {
-    log.debug(`Demo app listening on port ${port}`)
+    log.info(`Demo app listening on port ${port}`)
 })
